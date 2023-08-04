@@ -1,0 +1,252 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Poppins' ,sans-serif;
+}
+section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 220vh;
+    width: 100%;
+    background:url(../image/bg.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    animation: animateBg 5s linear infinite;
+}
+@keyframes animateBg{
+    100%{
+        filter: hue-rotate(360deg);
+    }
+}
+.login-box{
+    background-color: transparent;
+    width: 500px;
+    height: 180vh;
+    position: relative;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 0 50px #f50;
+    align-items: center;
+    backdrop-filter: blur(15px);
+}
+
+h2{
+    color: #fff;
+    text-align: center;
+    margin-left: 50px;
+    font-size: 2em;
+}
+.input-box{
+    position: relative;
+    width: 310px;
+    margin: 30px 0;
+    border-bottom: #fff 2px solid;
+    margin-left: 50px;
+    display: flex;
+}
+.input-box label{
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1em;
+    color: #fff;
+    pointer-events: none;
+    transition: 0.5s;
+}
+.input-box input:focus~label,
+.input-box input:valid~label{
+    top: -5px;
+}
+.input-box input{
+    width: 100%;
+    height: 50px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    color: #fff;
+    padding: 0 35px 0 5px;
+}
+.input-box .icon{
+    position: absolute;
+    right: 8px;
+    color: #fff;
+    font-size: 1.2em;
+    line-height: 57px;
+}
+.radio{
+    position: relative;
+    width: 310px;
+    margin: 30px 0;
+    /* border-bottom: #fff 2px solid; */
+    margin-left: 50px;
+    display: flex;
+}
+.radio label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1em;
+    color: #fff;
+    pointer-events: none;
+    transition: 0.5s;
+}
+.radio input {
+    width: 100%;
+    height: 20px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    color: #fff;
+    padding: 0 35px 0 5px;
+    margin-left: 90px;
+}
+.ma{
+    margin-left: 125px;
+}
+.fe{
+    margin-left: 245px;
+}
+#female{
+    margin-right: 65px;
+}
+.radio-subject{
+    position: relative;
+    width: 310px;
+    margin: 30px 0;
+    margin-left: 50px;
+    display: flex;
+    flex-direction: column;
+}
+.radio-subject label{
+    position: absolute;
+    top: 15%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1em;
+    color: #fff;
+    pointer-events: none;
+    transition: 0.5s;
+}
+.radio-subject input{
+    width: 100%;
+    height: 20px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    color: #fff;
+    padding: 0 35px 0 5px;
+    margin-left: -10px;
+    margin-top: 25px;
+}
+.En{
+    margin-left: 160px;
+    width: 200px;
+    margin-bottom: 80px;
+}
+.Ec{
+    margin-left: 160px;
+    width: 220px;
+    margin-top: 46px;
+}
+.Em{
+    margin-left: 160px;
+    width: 220px;
+    margin-top: 91px;
+}
+.Ea{
+    margin-left: 160px;
+    width: 220px;
+    margin-top: 136px;
+}
+.Ei{
+    margin-left: 160px;
+    width: 220px;
+    margin-top: 181px;
+}
+.checkbox{
+    position: relative;
+    width: 310px;
+    margin: 30px 0;
+    margin-left: 50px;
+    display: flex;
+    flex-direction: column;
+}
+.checkbox label{
+    position: absolute;
+    top: 15%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1em;
+    color: #fff;
+    pointer-events: none;
+    transition: 0.5s;
+}
+.checkbox input{
+    width: 100%;
+    height: 20px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    color: #fff;
+    padding: 0 35px 0 5px;
+    margin-left: -10px;
+    margin-top: 8px;
+}
+.read{
+    margin-left: 160px;
+    width: 220px;
+    margin-top: 1px;
+}
+.music{
+    margin-left: 160px;
+    width: 220px;
+    margin-top: 30px;
+}
+.sport{
+    margin-left: 160px;
+    width: 220px;
+    margin-top: 58px;
+}
+.travel{
+    margin-left: 160px;
+    width: 220px;
+    margin-top: 86px;
+}
+button{
+    width: 100%;
+    height: 40px;
+    background: transparent;
+    border: 1px solid;
+    border-radius: 40px;
+    outline: none;
+    cursor: pointer;
+    color: #fff;
+    font-size: 1em;
+    font-weight: 500;
+}
+button:hover{
+    background-color: #fff;
+    color: #000;
+    border: none;
+}
+@media (max-width:360px) {
+    .login-box{
+        width: 100%;
+        height: 100vh;
+        border: none;
+        border-radius: 0;
+    }
+    .input-box{
+        width: 290px;
+    }
+}

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/register-courses.css">
+    <title>Register Courses</title>
+</head>
+<body>
+    <h1>Course Selection</h1>
+    <table id="courseTable">
+        <thead>
+            <tr>
+                <th>Course Code</th>
+                <th>Course Title</th>
+                <th>Course creditHours</th>
+                <th>Select</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>CS101</td>
+                <td>Introduction to Computer Science</td>
+                <td>4</td>
+                <td><input type="checkbox" name="course" value="CS101"></td>
+            </tr>
+            <tr>
+                <td>MATH201</td>
+                <td>Calculus II</td>
+                <td>3</td>
+                <td><input type="checkbox" name="course" value="MATH201"></td>
+            </tr>
+            <tr>
+                <td>ENG101</td>  
+                <td>English Composition</td>
+                <td>2</td>
+                <td><input type="checkbox" name="course" value="ENG101"></td>
+            </tr>
+            <tr>
+                <td>PHYS101</td>
+                <td>Introduction to Physics</td>
+                <td>3</td>
+                <td><input type="checkbox" name="course" value="PHYS101"></td>
+            </tr>
+        </tbody>
+    </table>
+    <button id="saveButton">Save Courses</button>
+    <div id="selectedCourses"></div>
+    <button class="btn"><a href="index.html" class="back-link">Back</a></button>
+    <script>
+        const saveButton = document.getElementById("saveButton");
+        const courseTable = document.getElementById("courseTable");
+        const selectedCourses = document.getElementById("selectedCourses");
+
+        saveButton.addEventListener("click", () => {
+            const selectedCourseInputs = courseTable.querySelectorAll("input[type=checkbox]:checked");
+            const selectedCourseCodes = Array.from(selectedCourseInputs).map(input => input.value);
+
+            const table = document.createElement("table");
+            const tableHead = document.createElement("thead");
+            const tableHeadRow = document.createElement("tr");
+            const codeHeaderCell = document.createElement("th");
+            const titleHeaderCell = document.createElement("th");
+            const creditHoursHeaderCell = document.createElement("th");
+            const tableBody = document.createElement("tbody");
+
+            codeHeaderCell.textContent = "Course Code";
+            titleHeaderCell.textContent = "Course Title";
+            creditHoursHeaderCell.textContent = "Course creditHours";
+
+            tableHeadRow.appendChild(codeHeaderCell);
+            tableHeadRow.appendChild(titleHeaderCell);
+            tableHeadRow.appendChild(creditHoursHeaderCell);
+            tableHead.appendChild(tableHeadRow);
+            table.appendChild(tableHead);
+
+            selectedCourseCodes.forEach(courseCode => {
+            const courseTitleElement = courseTable.querySelector(`input[value="${courseCode}"]`).parentNode.previousElementSibling;
+            const courseTitle = courseTitleElement.previousElementSibling.textContent;
+            const coursecreditHours = courseTitleElement.nextElementSibling.previousElementSibling.textContent;
+
+                const courseTableRow = document.createElement("tr");
+                const courseCodeCell = document.createElement("td");
+                const courseTitleCell = document.createElement("td");
+                const coursecreditHoursCell = document.createElement("td");
+
+                courseCodeCell.textContent = courseCode;
+                courseTitleCell.textContent = courseTitle;
+                coursecreditHoursCell.textContent = coursecreditHours;
+
+                courseTableRow.appendChild(courseCodeCell);
+                courseTableRow.appendChild(courseTitleCell);
+                courseTableRow.appendChild(coursecreditHoursCell);
+
+                tableBody.appendChild(courseTableRow);
+            });
+
+            table.appendChild(tableBody);
+
+            selectedCourses.innerHTML = "";
+            selectedCourses.appendChild(table);
+        });
+    </script>
+</body>
+</html>
